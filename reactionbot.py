@@ -6,9 +6,16 @@ import logging
 import platform
 import traceback
 import configparser
+import sys
 from pathlib import Path
 from sqlite3 import OperationalError
 from typing import List, Dict, Union
+
+if sys.version_info >= (3, 12):
+    raise SystemExit(
+        f"Unsupported Python version: {sys.version.split()[0]}. "
+        "Use Python 3.11 or earlier."
+    )
 
 try:
     from pyrogram.errors import ReactionInvalid, UserNotParticipant
