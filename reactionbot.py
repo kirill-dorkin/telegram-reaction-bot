@@ -20,8 +20,11 @@ from converters import SessionConvertor, convert_tdata
 
 
 if platform.system() != 'Windows':
-    import uvloop
-    uvloop.install()
+    try:
+        import uvloop
+        uvloop.install()
+    except Exception as exc:
+        logging.warning('Failed to use uvloop: %s', exc)
 
 
 TRY_AGAIN_SLEEP = 20
