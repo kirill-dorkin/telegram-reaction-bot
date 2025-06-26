@@ -10,10 +10,15 @@ from pathlib import Path
 from sqlite3 import OperationalError
 from typing import List, Dict, Union
 
-from pyrogram.errors import ReactionInvalid, UserNotParticipant
-from pyrogram.handlers import MessageHandler
-from pyrogram import Client, idle, filters, types
-from pyrogram.errors.exceptions.unauthorized_401 import UserDeactivatedBan
+try:
+    from pyrogram.errors import ReactionInvalid, UserNotParticipant
+    from pyrogram.handlers import MessageHandler
+    from pyrogram import Client, idle, filters, types
+    from pyrogram.errors.exceptions.unauthorized_401 import UserDeactivatedBan
+except ModuleNotFoundError as exc:
+    raise ModuleNotFoundError(
+        "Pyrogram is not installed. Please run 'pip install -r requirements.txt'"
+    ) from exc
 
 from config import CHANNELS, POSSIBLE_KEY_NAMES, EMOJIS
 from converters import SessionConvertor, convert_tdata
