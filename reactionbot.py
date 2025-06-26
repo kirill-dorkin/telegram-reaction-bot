@@ -15,10 +15,26 @@ try:
     from pyrogram.handlers import MessageHandler
     from pyrogram import Client, idle, filters, types
     from pyrogram.errors.exceptions.unauthorized_401 import UserDeactivatedBan
-except ModuleNotFoundError as exc:
-    raise ModuleNotFoundError(
-        "Pyrogram is not installed. Please run 'pip install -r requirements.txt'"
-    ) from exc
+except ModuleNotFoundError:
+    # Attempt to install dependencies automatically if Pyrogram is missing.
+    import subprocess
+    import sys
+
+    print("Pyrogram is not installed. Installing dependencies from requirements.txt...")
+    try:
+        subprocess.check_call(
+            [sys.executable, "-m", "pip", "install", "-r", "requirements.txt"]
+        )
+    except Exception as exc:  # noqa: W0703 - broad exception to show original error
+        raise ModuleNotFoundError(
+            "Pyrogram is not installed. Please run 'pip install -r requirements.txt'"
+        ) from exc
+
+    # Retry import after installation
+    from pyrogram.errors import ReactionInvalid, UserNotParticipant
+    from pyrogram.handlers import MessageHandler
+    from pyrogram import Client, idle, filters, types
+    from pyrogram.errors.exceptions.unauthorized_401 import UserDeactivatedBan
 
 from config import CHANNELS, POSSIBLE_KEY_NAMES, EMOJIS
 from converters import SessionConvertor, convert_tdata
