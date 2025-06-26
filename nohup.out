@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/morfi/telegram-reaction-bot/reactionbot.py", line 13, in <module>
-    from pyrogram.errors import ReactionInvalid, UserNotParticipant
-ModuleNotFoundError: No module named 'pyrogram'
