@@ -7,6 +7,8 @@ Bot puts reaction to new posts in the channel, group or chat. Reactions are set 
 * Automatically converts a `Telethon session to a Pyrogram session`.
 
 ## Launch Instructions
+This project is tested with **Python 3.11** and earlier. Newer Python releases
+may fail to build dependencies like `uvloop` or `cryptg`.
 1. Create an empty directory
 2. `git clone https://github.com/kanewi11/telegram-reaction-bot.git ./`.
 3. `python3 -m venv venv` or on windows `python -m venv venv`.
