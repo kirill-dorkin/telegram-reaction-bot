@@ -31,8 +31,10 @@ def add_account(api_id: int = typer.Option(..., prompt=True),
     try:
         client.connect()
     except errors.BadMsgNotification:
-        typer.echo("Failed to connect: your system clock is out of sync.\n"
-                   "Please synchronize time and try again.")
+        typer.echo(
+            "Failed to connect: your system clock is out of sync.\n"
+            "Please synchronize time and try again (see 'Решение проблем' in README)."
+        )
         return
     typer.echo("Sending code to Telegram...")
     sent = client.send_code(phone)
