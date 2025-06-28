@@ -18,7 +18,7 @@ Bot puts reaction to new posts in the channel, group or chat. Reactions are set 
 
 ## Launch Instructions
 1. Create an empty directory
-2. `git clone https://github.com/kanewi11/telegram-reaction-bot.git ./`.
+2. `git clone https://github.com/kirill-dorkin/telegram-reaction-bot.git ./`.
 3. `python3 -m venv venv` or on windows `python -m venv venv`.
 4. `. venv/bin/activate` or on windows `\venv\Scripts\activate`.
 5. `pip install -r requirements.txt` or in windows `pip install -r requirements_win.txt`.
