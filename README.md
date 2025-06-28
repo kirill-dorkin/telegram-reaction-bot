@@ -13,23 +13,31 @@
    ```bash
    git clone https://github.com/kirill-dorkin/telegram-reaction-bot.git ./
    ```
-3. Создайте виртуальное окружение:
+3. Для автоматической подготовки окружения можно использовать скрипт `setup.sh`.
+   Перед запуском укажите переменные `API_ID`, `API_HASH` и `PHONE_NUMBER`:
+   ```bash
+   export API_ID=your_api_id
+   export API_HASH=your_api_hash
+   export PHONE_NUMBER=your_phone
+   ./setup.sh
+   ```
+4. Создайте виртуальное окружение:
    ```bash
    python3 -m venv venv   # или python -m venv venv в Windows
    ```
-4. Активируйте окружение:
+5. Активируйте окружение:
    ```bash
    source venv/bin/activate   # или .\venv\Scripts\activate в Windows
    ```
-5. Установите зависимости:
+6. Установите зависимости:
    ```bash
    pip install -r requirements.txt   # или pip install -r requirements_win.txt в Windows
    ```
-6. Укажите имя канала в `config.py`.
-7. Если планируете использовать конвертер `tdata`, откройте `converters/tdata_to_telethon.py` и задайте `API_HASH` и `API_ID` (строки 18–19).
-8. Создайте папки `sessions` и `tdatas`.
-9. Поместите файлы сессий и их конфигурации в `sessions` или каталоги `tdata` в `tdatas` (см. пункт 7).
-10. Запустите бота:
+7. Укажите имя канала в `config.py`.
+8. Если планируете использовать конвертер `tdata`, откройте `converters/tdata_to_telethon.py` и задайте `API_HASH` и `API_ID` (строки 18–19).
+9. Создайте папки `sessions` и `tdatas`.
+10. Поместите файлы сессий и их конфигурации в `sessions` или каталоги `tdata` в `tdatas` (см. пункт 7).
+11. Запустите бота:
     ```bash
     python reactionbot.py # nohup python reactionbot.py & если на фоне хочешь запустить
     ```
