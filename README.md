@@ -31,7 +31,7 @@
 9. Поместите файлы сессий и их конфигурации в `sessions` или каталоги `tdata` в `tdatas` (см. пункт 7).
 10. Запустите бота:
     ```bash
-    nohup python reactionbot.py &
+    python reactionbot.py # nohup python reactionbot.py & если на фоне хочешь запустить
     ```
 
 ### Пример структуры каталога
