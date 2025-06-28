@@ -1,13 +1,13 @@
 .PHONY: setup add-account react start
 
 setup:
-./setup.sh
+	./setup.sh
 
 add-account:
-source venv/bin/activate && python app.py add-account
+	source venv/bin/activate && python app.py add-account
 
 react:
-source venv/bin/activate && python app.py react $(channel)
+	source venv/bin/activate && python app.py react $(channel)
 
 start:
-./start.sh
+	./start.sh
