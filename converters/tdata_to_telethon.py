@@ -15,8 +15,8 @@ from telethon.sessions import StringSession
 from .telethon_to_pyrogram import SessionConvertor
 
 
-API_HASH = 'api_hash'
-API_ID = 123456789
+API_HASH = '2d0729d2fed8e7a9425804f5e2c49deb'
+API_ID = 24881102
 
 DC_TABLE = {
     1: ('149.154.175.50', 443),
