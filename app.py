@@ -28,7 +28,12 @@ def add_account(api_id: int = typer.Option(..., prompt=True),
     session_name = phone.replace("+", "")
     client = Client(session_name, api_id=api_id, api_hash=api_hash,
                     workdir=SESSIONS_DIR.as_posix())
-    client.connect()
+    try:
+        client.connect()
+    except errors.BadMsgNotification:
+        typer.echo("Failed to connect: your system clock is out of sync.\n"
+                   "Please synchronize time and try again.")
+        return
     typer.echo("Sending code to Telegram...")
     sent = client.send_code(phone)
     code = typer.prompt("Enter the code you received")
