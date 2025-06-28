@@ -1,0 +1,119 @@
+error 2025-06-28 12:32:39,303 WARNING Start reaction bot.
+error 2025-06-28 12:32:40,994 WARNING Traceback (most recent call last):
+  File "/Users/morfi/test/reactionbot.py", line 249, in main
+    await convert_tdata(tdata_path, WORK_DIR)
+  File "/Users/morfi/test/converters/tdata_to_telethon.py", line 209, in convert_tdata
+    await convert_telethon_session_to_pyrogram(auth_key, work_dir)
+  File "/Users/morfi/test/converters/tdata_to_telethon.py", line 242, in convert_telethon_session_to_pyrogram
+    await converter.save_pyrogram_session_file(converted_session, session_data)
+  File "/Users/morfi/test/converters/telethon_to_pyrogram.py", line 47, in save_pyrogram_session_file
+    async with Client(self.session_path.stem, session_string=session_string, api_id=self.api_id,
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/client.py", line 288, in __aenter__
+    return await self.start()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/utilities/start.py", line 58, in start
+    is_authorized = await self.connect()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/auth/connect.py", line 47, in connect
+    await self.session.start()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 142, in start
+    raise e
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 109, in start
+    await self.send(raw.functions.Ping(ping_id=0), timeout=self.START_TIMEOUT)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 333, in send
+    raise BadMsgNotification(result.error_code)
+pyrogram.errors.BadMsgNotification: [16] The msg_id is too low, the client time has to be synchronized.
+
+error 2025-06-28 12:32:45,447 WARNING Traceback (most recent call last):
+  File "/Users/morfi/test/reactionbot.py", line 266, in main
+    await app.start()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/utilities/start.py", line 62, in start
+    await self.authorize()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/client.py", line 324, in authorize
+    sent_code = await self.send_code(self.phone_number)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/auth/send_code.py", line 52, in send_code
+    r = await self.invoke(
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/advanced/invoke.py", line 77, in invoke
+    r = await self.session.invoke(
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 361, in invoke
+    return await self.send(query, timeout=timeout)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 331, in send
+    RPCError.raise_it(result, type(data))
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/errors/rpc_error.py", line 80, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.not_acceptable_406.NotAcceptable: Telegram says: [406 Not Acceptable] - [406 UPDATE_APP_TO_LOGIN] (caused by "auth.SendCode")
+
+error 2025-06-28 12:32:47,823 WARNING Traceback (most recent call last):
+  File "/Users/morfi/test/reactionbot.py", line 266, in main
+    await app.start()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/utilities/start.py", line 62, in start
+    await self.authorize()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/client.py", line 324, in authorize
+    sent_code = await self.send_code(self.phone_number)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/auth/send_code.py", line 52, in send_code
+    r = await self.invoke(
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/advanced/invoke.py", line 77, in invoke
+    r = await self.session.invoke(
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 361, in invoke
+    return await self.send(query, timeout=timeout)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 331, in send
+    RPCError.raise_it(result, type(data))
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/errors/rpc_error.py", line 80, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.not_acceptable_406.NotAcceptable: Telegram says: [406 Not Acceptable] - [406 UPDATE_APP_TO_LOGIN] (caused by "auth.SendCode")
+
+error 2025-06-28 12:35:11,796 WARNING Traceback (most recent call last):
+  File "/Users/morfi/test/reactionbot.py", line 266, in main
+    await app.start()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/utilities/start.py", line 62, in start
+    await self.authorize()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/client.py", line 324, in authorize
+    sent_code = await self.send_code(self.phone_number)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/auth/send_code.py", line 52, in send_code
+    r = await self.invoke(
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/advanced/invoke.py", line 77, in invoke
+    r = await self.session.invoke(
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 361, in invoke
+    return await self.send(query, timeout=timeout)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 331, in send
+    RPCError.raise_it(result, type(data))
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/errors/rpc_error.py", line 80, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.not_acceptable_406.NotAcceptable: Telegram says: [406 Not Acceptable] - [406 UPDATE_APP_TO_LOGIN] (caused by "auth.SendCode")
+
+error 2025-06-28 12:35:14,342 WARNING Traceback (most recent call last):
+  File "/Users/morfi/test/reactionbot.py", line 266, in main
+    await app.start()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/utilities/start.py", line 62, in start
+    await self.authorize()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/client.py", line 324, in authorize
+    sent_code = await self.send_code(self.phone_number)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/auth/send_code.py", line 52, in send_code
+    r = await self.invoke(
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/advanced/invoke.py", line 77, in invoke
+    r = await self.session.invoke(
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 361, in invoke
+    return await self.send(query, timeout=timeout)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 331, in send
+    RPCError.raise_it(result, type(data))
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/errors/rpc_error.py", line 80, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.not_acceptable_406.NotAcceptable: Telegram says: [406 Not Acceptable] - [406 UPDATE_APP_TO_LOGIN] (caused by "auth.SendCode")
+
+error 2025-06-28 12:35:19,752 WARNING Traceback (most recent call last):
+  File "/Users/morfi/test/reactionbot.py", line 266, in main
+    await app.start()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/utilities/start.py", line 62, in start
+    await self.authorize()
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/client.py", line 324, in authorize
+    sent_code = await self.send_code(self.phone_number)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/auth/send_code.py", line 52, in send_code
+    r = await self.invoke(
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/methods/advanced/invoke.py", line 77, in invoke
+    r = await self.session.invoke(
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 361, in invoke
+    return await self.send(query, timeout=timeout)
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/session/session.py", line 331, in send
+    RPCError.raise_it(result, type(data))
+  File "/Users/morfi/test/venv/lib/python3.9/site-packages/pyrogram/errors/rpc_error.py", line 80, in raise_it
+    raise getattr(
+pyrogram.errors.exceptions.not_acceptable_406.NotAcceptable: Telegram says: [406 Not Acceptable] - [406 UPDATE_APP_TO_LOGIN] (caused by "auth.SendCode")
+
